@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zikir Matik Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-pray"></i>
+                <h1>Zikir Matik Pro</h1>
+            </div>
+            <div class="header-controls">
+                <button id="soundToggle"><i class="fas fa-volume-up"></i></button>
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+                <button id="settingsToggle"><i class="fas fa-cog"></i></button>
+            </div>
+        </header>
+
+        <div class="settings-panel" id="settingsPanel">
+            <h3>Ayarlar</h3>
+            <div class="setting-item">
+                <label>Hedef Sayı:</label>
+                <input type="number" id="targetCount" min="1" value="33">
+            </div>
+            <div class="setting-item">
+                <label>Titreşim:</label>
+                <input type="checkbox" id="vibrationToggle" checked>
+            </div>
+            <div class="setting-item">
+                <label>Otomatik Kayıt:</label>
+                <input type="checkbox" id="autoSaveToggle" checked>
+            </div>
+        </div>
+
+        <div class="zikir-display">
+            <div class="zikir-arabic" id="zikirArabic">سُبْحَانَ ٱللَّٰهِ</div>
+            <h2 id="currentZikir">Sübhanallah</h2>
+            <p id="zikirMeaning">Allah'ı tüm eksikliklerden tenzih ederim</p>
+            <div class="counter-wrapper">
+                <div class="target-display">Hedef: <span id="targetDisplay">33</span></div>
+                <div class="counter">
+                    <span id="count">0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="decrement" class="circle-btn"><i class="fas fa-minus"></i></button>
+            <button id="increment" class="circle-btn primary"><i class="fas fa-plus"></i></button>
+            <button id="reset" class="circle-btn"><i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="zikir-list">
+            <h3>Zikirler</h3>
+            <div class="search-box">
+                <input type="text" id="searchZikir" placeholder="Zikir ara...">
+                <i class="fas fa-search"></i>
+            </div>
+            <select id="zikirSelect" size="3">
+                <option value="subhanallah">Sübhanallah</option>
+                <option value="elhamdulillah">Elhamdülillah</option>
+                <option value="allahuekber">Allahu Ekber</option>
+            </select>
+            <div class="zikir-actions">
+                <button id="addNewZikir"><i class="fas fa-plus"></i> Yeni Zikir</button>
+                <button id="editZikir"><i class="fas fa-edit"></i> Düzenle</button>
+                <button id="deleteZikir"><i class="fas fa-trash"></i> Sil</button>
+            </div>
+        </div>
+
+        <div class="statistics">
+            <h3>İstatistikler</h3>
+            <div class="stats-tabs">
+                <button class="tab active" data-tab="daily">Günlük</button>
+                <button class="tab" data-tab="weekly">Haftalık</button>
+                <button class="tab" data-tab="monthly">Aylık</button>
+            </div>
+            <div id="stats" class="stats-content"></div>
+            <div class="stats-chart" id="statsChart"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
